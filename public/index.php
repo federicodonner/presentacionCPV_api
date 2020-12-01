@@ -3,7 +3,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
-// require '../src/config/db.php';
+require '../src/config/db.php';
 require '../src/auxiliares/funciones.php';
 
 
@@ -12,6 +12,7 @@ $app = new \Slim\App;
 
 // Customer routes
 require '../src/routes/siguiente.php';
+require '../src/routes/registro.php';
 require '../src/routes/cors.php';
 
 
