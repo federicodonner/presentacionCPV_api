@@ -31,11 +31,15 @@ $app->post('/api/registro', function (Request $request, Response $response) {
 
         $stmt->execute();
 
-        $usuario->nombre = $nombre;
-        $usuario->participa = $participa;
+        // Obtiene el id de la droga recién creada para devolverla
+        $sql="SELECT * FROM participante WHERE id = LAST_INSERT_ID()";
+        $stmt = $db->query($sql);
+        $participantes = $stmt->fetchAll(PDO::FETCH_OBJ);
 
+        $participante = $participantes[0];
+        
         $db=null;
-        return dataResponse($response, $usuario, 201);
+        return dataResponse($response, $participante, 201);
     } catch (PDOException $e) {
         $db = null;
         return messageResponse($response, $e->getMessage(), 500);
