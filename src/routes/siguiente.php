@@ -42,7 +42,7 @@ $app->get('/api/actividad/{numero}', function (Request $request, Response $respo
         // Si estoy acá es porque encontró la actividad
         $actividad = $actividades[0];
 
-        $sql="SELECT id FROM participante ORDER BY RAND() LIMIT 2";
+        $sql="SELECT id FROM participante ORDER BY RAND() LIMIT 3";
         $stmt = $db->query($sql);
         $actores = $stmt->fetchAll(PDO::FETCH_OBJ);
 
