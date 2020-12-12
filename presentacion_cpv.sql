@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.3
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Dec 05, 2020 at 10:46 PM
--- Server version: 5.7.26
--- PHP Version: 7.4.2
+-- Host: localhost:3306
+-- Generation Time: Dec 12, 2020 at 02:53 PM
+-- Server version: 5.6.40-84.0-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,10 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `presentacion_cpv`
+-- Database: `feder161_presentacion_cpv`
 --
-CREATE DATABASE IF NOT EXISTS `presentacion_cpv` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `presentacion_cpv`;
 
 -- --------------------------------------------------------
 
@@ -40,7 +40,8 @@ CREATE TABLE `actividad` (
   `opcion_tres` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `opcion_cuatro` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `respuesta_correcta` int(11) NOT NULL,
-  `explicacion_respuesta` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
+  `explicacion_respuesta` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `cartas` text CHARACTER SET utf8 COLLATE utf8_bin
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -80,13 +81,12 @@ ALTER TABLE `participante`
 -- AUTO_INCREMENT for table `actividad`
 --
 ALTER TABLE `actividad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `participante`
 --
 ALTER TABLE `participante`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
